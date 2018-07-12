@@ -1043,7 +1043,16 @@ client.on("guildMemberRemove", function(member) {
         return wc.sendEmbed(embed);
 });
 //renbow 
-  
+  client.on("guildMemberRemove", function(member) {
+    const wc = member.guild.channels.find("name", "logs")
+        const embed = new Discord.RichEmbed()
+        .setColor('FF0000')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+        .addfield(':busts_in_silhouette: تم انضمام عضو الى السيرفر')
+        .setFooter("member.user.avatarURL")
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+});
 
 
 
