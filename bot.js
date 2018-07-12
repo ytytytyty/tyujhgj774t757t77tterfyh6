@@ -1048,7 +1048,7 @@ client.on("guildMemberRemove", function(member) {
         const embed = new Discord.RichEmbed()
         .setColor('FF0000')
         .setAuthor(member.user.tag, member.user.avatarURL)
-        .addfield(':busts_in_silhouette: تم انضمام عضو الى السيرفر')
+        .addfield(':busts_in_silhouette::broken_heart:  تم خروج عضو من السيرفر')
         .setFooter("member.user.avatarURL")
         .setTimestamp()
         return wc.sendEmbed(embed);
