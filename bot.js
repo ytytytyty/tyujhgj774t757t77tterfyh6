@@ -1034,14 +1034,12 @@ client.on("guildMemberAdd", function(member) {
 });
 
 
-//renbow 
-  client.on("guildMemberRemove", function(member) {
+client.on("guildMemberRemove", function(member) {
     const wc = member.guild.channels.find("name", "logs")
         const embed = new Discord.RichEmbed()
         .setColor('FF0000')
-        .setAuthor(member.user.tag, member.user.avatarURL)
-        .addfield(':busts_in_silhouette::broken_heart:  تم خروج عضو من السيرفر')
-        .setFooter("member.user.avatarURL")
+        .setAuthor(خروج العضو من السيرفر)
+        .setFooter("member.user.tag, member.user.avatarURL")
         .setTimestamp()
         return wc.sendEmbed(embed);
 });
