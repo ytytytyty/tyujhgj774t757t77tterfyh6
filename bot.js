@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '='
+const prefix = '.'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -30,7 +30,7 @@ client.user.setGame(`SN Bot`,"http://twitch.tv/S-F")
 //bc
 client.on('message', message => {
               if(!message.channel.guild) return;
-    var prefix = "=";
+    var prefix = ".";
     if(message.content.startsWith(prefix + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
@@ -138,7 +138,7 @@ client.on('message', message => {
 
 //room كتابي 
 client.on("message", message => {
-    var prefix = "="
+    var prefix = "."
     if (!message.content.startsWith(prefix)) return;
       let command = message.content.split(" ")[0];
       command = command.slice(prefix.length);
@@ -151,7 +151,7 @@ client.on("message", message => {
     });
 
 client.on('message', msg => {
-var prefix = "=";
+var prefix = ".";
   if(!msg.guild) return;
     if (msg.content.startsWith(prefix +'tc')) {
      let args = msg.content.split(" ").slice(1);
@@ -181,7 +181,7 @@ msg.guild.createChannel(args.join(' '), 'text');
 });
 //room voice
 client.on('message', msg => {
-var prefix = "=";
+var prefix = ".";
   if(!msg.guild) return;
     if (msg.content.startsWith(prefix +'vc')) {
      let args = msg.content.split(" ").slice(1);
@@ -212,7 +212,7 @@ msg.guild.createChannel(args.join(' '), 'voice');
  
 //server 
 client.on('message', function(msg) {
-    const prefix = '='
+    const prefix = '.'
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
@@ -237,9 +237,9 @@ client.on('message', message => {
             if (message.content.startsWith(prefix + "help")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)  
-.addField(' :large_blue_diamond:  **『اوامر العامة』** ' ,':small_orange_diamond: **=c1**')  
+.addField(' :large_blue_diamond:  **『اوامر العامة』** ' ,':small_orange_diamond: **.c1**')  
 .addField('                       **  ╔[════════════════════════════════════]╗ **  ' ,' ** **') 
-.addField(' :large_blue_diamond:  **『اوامر العاب』** ' ,':small_orange_diamond: **=c2** ')   
+.addField(' :large_blue_diamond:  **『اوامر العاب』** ' ,':small_orange_diamond: **.c2** ')   
 .addField('                       **  ╚[════════════════════════════════════]╝ **  ' ,' ** **')       
 .setFooter(`SN bot `,'https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg')
      .setColor('RANDOM')
@@ -252,7 +252,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === "=c1"){
+     if (message.content === ".c1"){
   let embed = new Discord.RichEmbed()
           .setAuthor(message.author.username, message.author.avatarURL)
            .setThumbnail(message.author.avatarURL)
@@ -263,37 +263,37 @@ client.on('message', message => {
 :small_blue_diamond:『اوامر العامة』   
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :newspaper:『لمعرفة السيرفر』
-=server
+.server
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :robot: 『لمعرفة البوت』
-=bot
+.bot
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :no_entry: 『لطرد شخص』
-=kick
+.kick
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :warning:  『 لأعطاء شخص بان』
-=ban
+.ban
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :x:        『لمسح الشات』
-=clear 
+.clear 
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :blue_book:『لروئية الرتب』             
-=roles
+.roles
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:   
 :signal_strength: 『لرؤية سرعة البوت』
-=ping
+.ping
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:   
 :pencil:  『لجعل البوت يكتب ماتكتب』
-=say (الكلام)
+.say (الكلام)
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:   
 :bust_in_silhouette:  『لمعرفة حساب شخص』
-=id 
+.id 
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :busts_in_silhouette: 『كود برودكاست』
-=bc massage
+.bc massage
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:    
 :incoming_envelope: 『رابط البوت』
-=inv
+.inv
 `)
 .setColor('#ffc85b')
 
@@ -310,7 +310,7 @@ client.on('message', msg => {
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === "=c1") {
+     if (message.content === ".c1") {
   let embed = new Discord.RichEmbed()
           .setAuthor(message.author.username, message.author.avatarURL)
            .setThumbnail(message.author.avatarURL)
@@ -318,40 +318,40 @@ client.on('message', message => {
     .setDescription(`
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :clipboard: 『مزخرف الكلام بس لازم انجليزي』
-=zkrf الكلام 
+.zkrf الكلام 
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :regional_indicator_y:『الكتابة بصورة』
-=draw الكلام
+.draw الكلام
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :globe_with_meridians: 『عدد الاعضاء』
-=members
+.members
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :frame_photo: 『صورة السيرفر』
-=image
+.image
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :cat:『لرؤية صور قطط』
-=:cat:
+.:cat:
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :negative_squared_cross_mark: 『ميوت لشخص』
-=mute
+.mute
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :white_check_mark: 『لفك الميوت عن شخص』
-=unmute
+.unmute
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :crayon: 『لأضافة 109 لون 』
-=add-colors
+.add-colors
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :crayon: :x:『لمسح الالوان』
-=de-colors
+.de-colors
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :_20_: 『لرؤية قائمة ايموجيات السيرفر』
-=emojilist
+.emojilist
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 『لأرسال طلب او اقتراح او شكر』
-=sug (الكلام)
+.sug (الكلام)
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 『لجعل البوت يكتب ماتكتب بطريقة جميلة』
-=tag
+.tag
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
 :skull:『الدعم الفني والمساعدة』:skull: 
 
@@ -359,7 +359,7 @@ client.on('message', message => {
 رابط سيرفر البوت
 https://discord.gg/Hdkjwt
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-لأضافة البوت | =inv
+لأضافة البوت | .inv
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
 مصمم البوت | ¦~{<Yousef>}~¦#5618
 `)
@@ -383,7 +383,7 @@ message.author.sendEmbed(embed)
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === "=c2") {
+     if (message.content === ".c2") {
   let embed = new Discord.RichEmbed()
           .setAuthor(message.author.username, message.author.avatarURL)
            .setThumbnail(message.author.avatarURL)
@@ -394,22 +394,22 @@ client.on('message', message => {
 :small_orange_diamond:『اوامر العاب』
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :video_game: 『لعبة كت كويت』
-=كت كويت
+.كت كويت
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :video_game: 『لعبة قرعة』
-=قرعة
+.قرعة
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :video_game: 『لعبة صراحه』
-=صراحه
+.صراحه
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :video_game: 『عقاب』
-=عقاب
+.عقاب
 :heavy_minus_s_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :video_game: 『حب』
-=حب
+.حب
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :video_game: 『هل تعلم』
-=هل تعلم
+.هل تعلم
 `)
 .setColor('#ffc85b')
 message.author.sendEmbed(embed)
@@ -425,7 +425,7 @@ client.on('message', msg => {
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === "=c2") {
+     if (message.content === ".c2") {
   let embed = new Discord.RichEmbed()
           .setAuthor(message.author.username, message.author.avatarURL)
            .setThumbnail(message.author.avatarURL)
@@ -433,19 +433,19 @@ client.on('message', message => {
     .setDescription(`
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :green_book: 『اذكار』
-=اذكار
+.اذكار
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :video_game: 『حكم』
-=حكم
+.حكم
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :video_game:『يوريك سكنك』
-=mcskin name
+.mcskin name
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :video_game:『لعبة حجرة ورقة مقص』
-=rps
+.rps
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :video_game: 『لعبة طلب زواج』
-=زواج
+.زواج
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 『لعبة لو خيروك』
 :video_game:=لو خيروك
@@ -457,7 +457,7 @@ client.on('message', message => {
 رابط سيرفر البوت
 https://discord.gg/Hdkjwt
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-لأضافة البوت | =inv
+لأضافة البوت | .inv
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
 مصمم البوت | ¦~{<Yousef>}~¦#5618
 `)
@@ -553,7 +553,7 @@ client.on('message', message => {
 
 //id
 client.on('message', message => {
-    var prefix = "="
+    var prefix = "."
 var args = message.content.split(" ").slice(1);    
 if(message.content.startsWith(prefix + 'id')) {
 var year = message.author.createdAt.getFullYear()
@@ -642,7 +642,7 @@ msg.delete();
 });
 //bot
 client.on('message', message => {
-    if(message.content === "=bot") {
+    if(message.content === ".bot") {
         const embed = new Discord.RichEmbed()
         .setColor("#00FFFF")
   .addField('**الذاكرة المستخدمة 💾**', `${(process.memoryUsage().rss / 1000000).toFixed()}MB`, true)
@@ -657,7 +657,7 @@ client.on('message', message => {
 //ping
 client.on('message', message => {
                                 if(!message.channel.guild) return;
-                        if (message.content.startsWith('=ping')) {
+                        if (message.content.startsWith('.ping')) {
                             if(!message.channel.guild) return;
                             var msg = `${Date.now() - message.createdTimestamp}`
                             var api = `${Math.round(client.ping)}`
@@ -673,7 +673,7 @@ client.on('message', message => {
                     });
 //draw
 client.on('message', message => {
-    var prefix = "="
+    var prefix = "."
     let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
 
@@ -716,7 +716,7 @@ message.channel.sendFile(canvas.toBuffer());
 });
 //roles
 client.on('message', message =>{
-    if(message.content == "=roles"){
+    if(message.content == ".roles"){
         var roles = '',
         ros=message.guild.roles.size,
         role = [];
@@ -729,7 +729,7 @@ client.on('message', message =>{
 });
 
 //صورة حيوانات
- var Yousef = "=";
+ var Yousef = ".";
 var cats = ["https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg","http://www.dogbazar.org/wp-content/uploads/2014/09/british-bull-dog-puppies.jpg","http://cdn2-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg","http://cdn.akc.org/Marketplace/Breeds/German_Shepherd_Dog_SERP.jpg","https://animalso.com/wp-content/uploads/2016/12/black-german-shepherd_2.jpg","https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpg","https://www.petfinder.com/wp-content/uploads/2012/11/101438745-cat-conjunctivitis-causes.jpg","http://www.i-love-cats.com/images/2015/04/12/cat-wallpaper-38.jpg","https://www.aspca.org/sites/default/files/cat-care_urine-marking_main-image.jpg","https://s-media-cache-ak0.pinimg.com/originals/f0/3b/76/f03b7614dfadbbe4c2e8f88b69d12e04.jpg","http://www.rd.com/wp-content/uploads/sites/2/2016/04/15-cat-wants-to-tell-you-attention.jpg","https://www.thelocal.de/userdata/images/article/fa6fd5014ccbd8f4392f716473ab6ff354f871505d9128820bbb0461cce1d645.jpg","https://www.adelaidezoo.com.au/wp-content/uploads/sites/2/animals/GiantPanda3Slider.jpg","http://imagem.band.com.br/f_230168.jpg"]
     client.on('message', message => {
         var args = message.content.split(" ").slice(1);
@@ -748,7 +748,7 @@ client.on('guildCreate', guild => {
 });
 //colors
 //الوان
-var Yousef = '=';
+var Yousef = '.';
 client.on('message', message=>{
     if (message.content === Yousef + 'add-colors'){
         if (message.channel.guild){
@@ -792,7 +792,7 @@ client.on('message', msg => {
 });
 //EMOJI
 client.on('message', message => { 
-let PREFIX = '='
+let PREFIX = '.'
     if (message.content.startsWith(PREFIX + 'emojilist')) {
 
         const List = message.guild.emojis.map(e => e.toString()).join(" ");
@@ -808,7 +808,7 @@ let PREFIX = '='
     }
 });
 //sug
-var yousef = "="
+var yousef = "."
 client.on('message', message => {
 
   if (message.content.startsWith( yousef + "sug")) {
@@ -837,7 +837,7 @@ client.on('message', message => {
 //gifaway
 //cat
 client.on('message', message => {
-    if (message.content === '=🐱') {
+    if (message.content === '.🐱') {
         message.channel.sendFile("http://thecatapi.com/api/images/get?format=src&type=png", "cat.png")
     }
 });
@@ -912,7 +912,7 @@ client.on('message', message => {
   });
 //image server
   client.on("message", message => {             
-  const prefix = '='
+  const prefix = '.'
           if(!message.channel.guild) return;
    if(message.author.bot) return;
       if(message.content === prefix + "serverimage"){ 
@@ -947,7 +947,7 @@ client.on('message', function(message) {
 
 //avatar
 client.on('message', message => {
-  if (message.content.startsWith("=avatar")) {
+  if (message.content.startsWith(".avatar")) {
 
       var mentionned = message.mentions.users.first();
   var king66s;
@@ -1152,7 +1152,7 @@ client.on("guildBanAdd", (guild, member) => {
 	 'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
 ]
    client.on('message', message => {
- if (message.content.startsWith('=صراحه')) {
+ if (message.content.startsWith('.صراحه')) {
      if(!message.channel.guild) return message.reply('** This command only for servers **');
   var client= new Discord.RichEmbed()
   .setTitle("لعبة صراحة ..")
@@ -1224,7 +1224,7 @@ const Za7f = [
 
 
  client.on('message', message => {
-   if (message.content.startsWith("=عقاب")) {
+   if (message.content.startsWith(".عقاب")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -1278,7 +1278,7 @@ message.channel.sendEmbed(cat);
 ]
 
  client.on('message', message => {
-   if (message.content.startsWith("=كت كويت")) {
+   if (message.content.startsWith(".كت كويت")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -1298,7 +1298,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 
 
  client.on('message', message => {
-   if (message.content.startsWith("=حب")) {
+   if (message.content.startsWith(".حب")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -1369,7 +1369,7 @@ const kingmas = [
    '*** روح اكل ملح + ليمون اذا مافيه اكل اي شيء من اختيار الي معك.  ***'
 ]
  client.on('message', message => {
-   var prefix = '=';
+   var prefix = '.';
  if (message.content.startsWith(prefix + 'حكم')) {
   var mariam= new Discord.RichEmbed()
   .setTitle("لعبة حكم ..")
@@ -1420,7 +1420,7 @@ const adkar = [
 ]
 client.on('message', message => {
 if (message.author.bot) return;
-if (message.content.startsWith('=اذكار')) {
+if (message.content.startsWith('.اذكار')) {
   if(!message.channel.guild) return;
 var client= new Discord.RichEmbed()
 .setTitle("اذكار")
@@ -1434,7 +1434,7 @@ message.react("??")
 });
 //skin
 client.on("message", message => {
-    var prefix = "="
+    var prefix = "."
     if (!message.content.startsWith(prefix)) return;
       let command = message.content.split(" ")[0];
       command = command.slice(prefix.length);
@@ -1488,7 +1488,7 @@ __امامك  5 توان للاختيار__`)
 });
 //6lb zoaj
 client.on('message', message => {
-      if(message.content.startsWith ("=زواج")) {
+      if(message.content.startsWith (".زواج")) {
       if(!message.channel.guild) return message.reply('** This command only for servers **')
       var proposed = message.mentions.members.first()
      
