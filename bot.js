@@ -1033,15 +1033,7 @@ client.on("guildMemberAdd", function(member) {
         return wc.sendEmbed(embed);
 });
 
-client.on("guildMemberRemove", function(member) {
-    const wc = member.guild.channels.find("name", "logs")
-        const embed = new Discord.RichEmbed()
-        .setColor('FF0000')
-        .setAuthor(member.user.tag, member.user.avatarURL)
-        .setFooter(" خروج عضو")
-        .setTimestamp()
-        return wc.sendEmbed(embed);
-});
+
 //renbow 
   client.on("guildMemberRemove", function(member) {
     const wc = member.guild.channels.find("name", "logs")
