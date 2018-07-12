@@ -1038,8 +1038,8 @@ client.on("guildMemberRemove", function(member) {
     const wc = member.guild.channels.find("name", "logs")
         const embed = new Discord.RichEmbed()
         .setColor('FF0000')
-        .setAuthor(خروج العضو من السيرفر)
-        .setFooter("member.user.tag, member.user.avatarURL")
+        .setAuthor(member.user.tag, member.user.avatarURL)
+        .setFooter("  خروج عضو من السيرفر")
         .setTimestamp()
         return wc.sendEmbed(embed);
 });
