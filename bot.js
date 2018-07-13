@@ -1162,7 +1162,7 @@ client.on('message', message => {
             if (message.content.startsWith("هلا")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
-.addField (':heart: هلا فيك حبيبي', '')
+.addField (':heart: هلا فيك حبيبي', '.')
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
             }
@@ -1172,7 +1172,7 @@ client.on('message', message => {
             if (message.content.startsWith("باك")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
-.addField (':heart_eyes: ولكم يا حلو', '')
+.addField (':heart_eyes: ولكم يا حلو', '.')
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
             }
@@ -1182,7 +1182,7 @@ client.on('message', message => {
             if (message.content.startsWith("برب")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
-.addField (':revolving_hearts: اوك بس لاتطول عيوني', '  ')
+.addField (':revolving_hearts: اوك بس لاتطول عيوني', ' . ')
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
             }
@@ -1192,7 +1192,7 @@ client.on('message', message => {
             if (message.content.startsWith("هاي")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
-.addField (':yellow_heart: هايات', '  ')
+.addField (':yellow_heart: هايات', ' . ')
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
             }
