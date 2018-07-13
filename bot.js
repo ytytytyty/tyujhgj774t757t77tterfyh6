@@ -1582,7 +1582,7 @@ const minecraft = [  'ما معنى تطويرة؛ silk touch ؟',  'من هوة
 client.on('message', message => {
 
  
-if (message.content.startsWith(prefix + 'minecraft')) {
+if (message.content.startsWith(prefix + 'mc')) {
 
   if(!message.channel.guild) return message.reply('** This command only for servers **');
 var client= new Discord.RichEmbed()
