@@ -1147,31 +1147,7 @@ if (message.content.startsWith(prefix + 'tran')) {
     }
 }
 });
-//math
-const math = require('math-expression-evaluator');
-const stripIndents = require('common-tags').stripIndents;
 
-client.on('message', msg => {
- if (msg.content.startsWith(prefix + 'colc')) {
-    let args = msg.content.split(" ").slice(1);
-        const question = args.join(' ');
-    if (args.length < 1) {
-        msg.reply('Specify a equation, please.');
-} else {    let answer;
-    try {
-        answer = math.eval(question);
-    } catch (err) {
-        msg.reply(`Error: ${err}`);
-    }
-    
-    const embed = new Discord.RichEmbed()
-   .addField("ادخال: ",`**${question}**`, true)
-    .setFooter(`SN bot `,"https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg")
-    .addField("اخراج: ",`**${answer}**`, true)
-    msg.channel.send(embed)
-    }
-};
-});
 //games
     const Sra7a = [
      'صراحه  |  صوتك حلوة؟',
