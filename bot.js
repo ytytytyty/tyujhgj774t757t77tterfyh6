@@ -447,9 +447,11 @@ client.on('message', message => {
 :video_game: 『لعبة طلب زواج』
 .زواج
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
-『لعبة لو خيروك』
-:video_game:=لو خيروك
+:video_game:『لعبة لو خيروك』
+.لو خيروك
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
+:video_game:『لعبة ماين كرافت』
+.mc
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
 :skull:『الدعم الفني والمساعدة』:skull: 
 
