@@ -64,7 +64,7 @@ client.on('message', message => {
     })
     })
     reaction2.on("collect", r => {
-    message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
+    message.channel.send(`تم رفض البرودكاست`).then(m => m.delete(5000));
     msg.delete();
     })
     })
@@ -1126,7 +1126,7 @@ if (message.content.startsWith(prefix + 'tran')) {
             args = args.join(' ').slice(1)
             let translation;
 
-            if (!Langs.includes(transArg)) return message.channel.send(`**Language not found.**`);
+            if (!Langs.includes(transArg)) return message.channel.send(`:innocent: اكتب اللغه من فضلك`);
             args = args.slice(transArg.length);
 
             translate(args, {
@@ -1135,10 +1135,10 @@ if (message.content.startsWith(prefix + 'tran')) {
 
                 const embed = new Discord.RichEmbed()
                     .setAuthor("Translator", 'https://media.discordapp.net/attachments/463513640566390801/463525969534386176/rotate_right.png?width=473&height=473')
-                    .addField(`إدخال/Input`, `\`\`\`${args}\`\`\``)
+                    .addField(`الكلمه/Input`, `\`\`\`${args}\`\`\``)
                     .setColor("#42f4c8")
                    .setFooter(`SN bot `,"https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg")
-                .addField(`اخراج/Output`, `\`\`\`${res.text}\`\`\``);
+                .addField(`الترجمه/Output`, `\`\`\`${res.text}\`\`\``);
               
              
                 return message.channel.send(embed);
