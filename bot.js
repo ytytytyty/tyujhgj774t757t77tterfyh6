@@ -1147,14 +1147,57 @@ if (message.content.startsWith(prefix + 'tran')) {
     }
 }
 });
-//l3'h
-
-client.on('message' , message => {
-    if(message.content.includes === '.اللغات') {
-    message.channel.send(`afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'azerbaijani', 'bangla', 'basque', 'belarusian', 'bengali', 'bosnian', 'bulgarian', 'burmese', 'catalan', 'cebuano', 'chichewa', 'chinese simplified', 'chinese traditional', 'corsican', 'croatian', 'czech', 'danish', 'dutch', 'english', 'esperanto', 'estonian', 'filipino', 'finnish', 'french', 'frisian', 'galician', 'georgian', 'german', 'greek', 'gujarati', 'haitian creole', 'hausa', 'hawaiian', 'hebrew', 'hindi', 'hmong', 'hungarian', 'icelandic', 'igbo', 'indonesian', 'irish', 'italian', 'japanese', 'javanese', 'kannada', 'kazakh', 'khmer', 'korean', 'kurdish (kurmanji)', 'kyrgyz', 'lao', 'latin', 'latvian', 'lithuanian', 'luxembourgish', 'macedonian', 'malagasy', 'malay', 'malayalam', 'maltese', 'maori', 'marathi', 'mongolian', 'myanmar (burmese)', 'nepali', 'norwegian', 'nyanja', 'pashto', 'persian', 'polish', 'portugese', 'punjabi', 'romanian', 'russian', 'samoan', 'scottish gaelic', 'serbian', 'sesotho', 'shona', 'sindhi', 'sinhala', 'slovak', 'slovenian', 'somali', 'spanish', 'sundanese', 'swahili', 'swedish', 'tajik', 'tamil', 'telugu', 'thai', 'turkish', 'ukrainian', 'urdu', 'uzbek', 'vietnamese', 'welsh', 'xhosa', 'yiddish', 'yoruba', 'zulu' `);
-    }
-     });
-
+//....
+ client.on('message', message => {
+            if (message.content.startsWith("السلام عليكم")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField (':heart: وعليكم السلام ورحمه الله وبركاته', ' ! ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+            }
+ });
+///
+client.on('message', message => {
+            if (message.content.startsWith("هلا")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField (':heart: هلا فيك حبيبي', '')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+            }
+ });
+///
+ client.on('message', message => {
+            if (message.content.startsWith("باك")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField (':heart_eyes: ولكم يا حلو', '')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+            }
+ });
+///
+ client.on('message', message => {
+            if (message.content.startsWith("برب")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField (':revolving_hearts: اوك بس لاتطول عيوني', '  ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+            }
+ });
+///
+ client.on('message', message => {
+            if (message.content.startsWith("هاي")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField (':yellow_heart: هايات', '  ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+            }
+ });
+///
 //games
     const Sra7a = [
      'صراحه  |  صوتك حلوة؟',
