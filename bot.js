@@ -1198,6 +1198,22 @@ client.on('message', message => {
             }
  });
 ///
+const bannedwords = [
+    "كلب",
+    "حيوان",
+    "زق",
+    "تبن",
+    "كل زق",
+    "كل تبن"
+
+  ];
+
+client.on('message',  message => {
+  if(bannedwords.some(word => message.content.includes(word))) {
+    message.delete()
+    message.reply(" :cry: :broken_heart: افا ظنيتك محترم ").then(msg => {msg.delete(5000)});;
+  };
+});
 //games
     const Sra7a = [
      'صراحه  |  صوتك حلوة؟',
