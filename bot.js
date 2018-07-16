@@ -1685,7 +1685,7 @@ if(message.content === prefix + 'ms7f' || message.content === prefix + 'مصحف
 	
 	let embed = new Discord.RichEmbed()
 	.setColor('#264d00')
-	.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png')
+	.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/avatars/463508171898748938/6c31f7374750223554dd5782ad89fc50.png?size=2048')
 	.setImage(pages[page-1])
 	
 // ${page}
@@ -1718,34 +1718,34 @@ if(message.content === prefix + 'ms7f' || message.content === prefix + 'مصحف
 				if (page === 1) return;
 				page--;
 				embed.setImage(pages[page-1]);
-				embed.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png');
+				embed.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/avatars/463508171898748938/6c31f7374750223554dd5782ad89fc50.png?size=2048');
 				msg.edit(embed)
 			})
 			forwards.on('collect', r => {
 				if (page === pages.length) return;
 				page++;
 				embed.setImage(pages[page-1]);
-				embed.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png');
+				embed.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/avatars/463508171898748938/6c31f7374750223554dd5782ad89fc50.png?size=2048');
 				msg.edit(embed)
 			})
 			sbackwards.on('collect', r => {
 				if (page === 1) return;
 				page = 1;
 				embed.setImage(pages[page-1]);
-				embed.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png');
+				embed.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/avatars/463508171898748938/6c31f7374750223554dd5782ad89fc50.png?size=2048');
 				msg.edit(embed)
 			})
 			sforwards.on('collect', r => {
 				if (page === pages.length) return;
 				page = 200; // إذا تبي تكمل ل 600 صفحة غير الرقم للصفحة الي وصلت لها
 				embed.setImage(pages[page-1]);
-				embed.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png');
+				embed.setFooter(`القراآن الكريم | صفحة رقم ${page} من اصل ${pages.length} صفحة`, 'https://cdn.discordapp.com/avatars/463508171898748938/6c31f7374750223554dd5782ad89fc50.png?size=2048');
 				msg.edit(embed)
 			})
 			cancel.on('collect', r => {
 				embed.setDescription(`**سوف يتم إغلاق القائمة**`);
 				embed.setImage('');
-				embed.setFooter(`Menu will close after 3sec`, 'https://cdn.discordapp.com/attachments/404332408075190282/412722171325054996/NS1.png');
+				embed.setFooter(`Menu will close after 3sec`, 'https://cdn.discordapp.com/avatars/463508171898748938/6c31f7374750223554dd5782ad89fc50.png?size=2048');
 				msg.edit(embed).then(msg.delete(3000));
 			})
 		})
