@@ -1226,7 +1226,7 @@ client.on('message', msg => {
     let args = msg.content.split(" ").slice(1);
     if(!args[1]) return msg.reply('الرجاء كتابة الاقتراح')
     //غيره على حسب اسم روم الاقتراحات او سوي مثل اسم الروم الموجود هنا
-    if(msg.guild.channels.find('name', 'suggestions')) {
+    if(msg.guild.channels.find('name', 'suggest')) {
       //غيره هنا كمان اذا غيرت فوق
       msg.guild.channels.find('name', 'suggest').send(`
       تم الاقتراح من قبل : ${msg.member}
