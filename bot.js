@@ -643,18 +643,38 @@ msg.delete();
 }
 });
 //bot
+function timeCon(time) {
+    let days = Math.floor(time % 31536000 / 86400)
+    let hours = Math.floor(time % 31536000 % 86400 / 3600)
+    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
+    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
+    days = days > 9 ? days : '0' + days
+    hours = hours > 9 ? hours : '0' + hours
+    minutes = minutes > 9 ? minutes : '0' + minutes
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+}
 client.on('message', message => {
-    if(message.content === ".bot") {
-        const embed = new Discord.RichEmbed()
-        .setColor("#00FFFF")
-  .addField('**الذاكرة المستخدمة 💾**', `${(process.memoryUsage().rss / 1000000).toFixed()}MB`, true)
-         .addField('**سرعة الاتصال📡**' , `${Date.now() - message.createdTimestamp}` + ' ms')
-        .addField('**استخدام المعالج💿**', `${(process.cpuUsage().rss / 10000).toFixed()}%`, true)
-        .addField('**:globe_with_meridians: عدد السيرفرات**' , `${client.guilds.size}`, true)
-     .addField('**عدد المستخدمين 👥 **' , `${client.users.size}`, true)
-        .setFooter(`SN bot `,'https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg')
-        message.channel.sendEmbed(embed);
-           }
+    if (message.content.startsWith(".bot")) {
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .setTitle('``INFO SN Bot`` ')
+            .addField('``Uptime``', [timeCon(process.uptime())], true)
+            .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('``servers``', [client.guilds.size], true)
+            .addField('``channels``' , `[ ${client.channels.size} ]` , true)
+            .addField('``Users``' ,`[ ${client.users.size} ]` , true)
+            .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
+            .addField('``My ID``' , `[ ${client.user.id} ]` , true)
+                  .addField('``My Prefix``' , `.` , true)
+                  .addField('``My Language``' , `[ Java Script ]` , true)
+                  .setFooter('By | [DT あ] ¦~{<Yousef>}~¦')
+    })
+}
 });
 //ping
 client.on('message', message => {
