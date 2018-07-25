@@ -1262,7 +1262,29 @@ client.on('message', msg => {
     }
 
 });
+//warn
+var prefix = ".";
+client.on('message', message => {
+     if(message.author.bot) return;
 
+    if (!message.content.startsWith(prefix)) return;
+    let command = message.content.split(" ")[0];
+    command = command.slice(prefix.length);
+    if (command == "warn") {
+
+        if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("**ليس لديك برمشن MANAGE MESSAGES**");
+    let args = message.content.split(" ").slice(1);
+                    let reason = message.content.split(" ").slice(2).join(" ");
+                if (message.mentions.users.size < 1) return message.reply("**منشن الشخص**");
+        if (!reason) return message.reply("**اكتب سبب التحذير**");
+
+        message.channel.sendMessage(args.join("  "))
+        message.delete();
+
+
+    }
+
+});
 //games
     const Sra7a = [
      'صراحه  |  صوتك حلوة؟',
