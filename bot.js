@@ -1263,27 +1263,23 @@ client.on('message', msg => {
 
 });
 //warn
-client.on('message', message => {
-     if(message.author.bot) return;
-
-    if (!message.content.startsWith(prefix)) return;
-    let command = message.content.split(" ")[0];
-    command = command.slice(prefix.length);
-    if (command == "warn") {
-
-        if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("**ليس لديك برمشن MANAGE MESSAGES**");
-    let args = message.content.split(" ").slice(1);
-                    let reason = message.content.split(" ").slice(2).join(" ");
-                if (message.mentions.users.size < 1) return message.reply("**منشن الشخص**");
-        if (!reason) return message.reply("**اكتب سبب التحذير**");
-
-        message.channel.sendMessage(args.join("  "))
-        message.delete();
-
-
-    }
-
-});
+client.on('message', msg => { 
+        if (msg.content.startsWith(`.warn`)) {
+          if(!msg.member.hasPermission("MANAGE_MESSAGES")) return;
+           let args = msg.content.split(" ").slice(1);
+          if (!msg.mentions.members.first()) return msg.reply('منشن الشخص المحدد')
+          if (!args[1]) return msg.reply('``اكتب السبب``')
+       
+          if (msg.guild.channels.find('name', 'warn')) {
+         
+            msg.guild.channels.find('name', 'warn').send(`
+          تم اعطائك تنبيه : ${msg.mentions.members.first()}
+          لأنك قمت بما يلي
+          ${args.join(" ").split(msg.mentions.members.first()).slice(' ')}
+          `)
+          }
+        }
+})
 //games
     const Sra7a = [
      'صراحه  |  صوتك حلوة؟',
@@ -1424,7 +1420,7 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL) 
- .addField('WOlF BOT' ,
+ .addField('SN Bot' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
