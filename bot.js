@@ -53,10 +53,10 @@ client.on('message', message => {
     var bc = new
        Discord.RichEmbed()
        .setColor('RANDOM')
-       .setTitle('Broadcast')
-       .addField('Server', message.guild.name)
-       .addField('Sender', message.author.username)
-       .addField('Message', args)
+       .setTitle('البرودكاست')
+       .addField('السيرفر', message.guild.name)
+       .addField('المرسل', message.author.username)
+       .addField('الرسالة', args)
        .setThumbnail(message.author.avatarURL)
        .setFooter(copy, client.user.avatarURL);
     m.send({ embed: bc })
