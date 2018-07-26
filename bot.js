@@ -637,7 +637,7 @@ client.on('message', message => {
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
-            .setColor('RANDOM')
+            .setColor('#9933CC')
             .setTitle('``معلومات SN Bot`` ')
             .addField('``مدة التشغيل``', [timeCon(process.uptime())], true)
             .addField('``سرعه النت``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
