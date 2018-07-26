@@ -29,6 +29,7 @@
     "youtube-info": "^1.2.0",
     "ytdl-core": "^0.20.3",
     "math-expression-evaluator": "^1.2.17",
+    "zalgolize": "^1.2.4"
     "figlet": "^1.2.0",
     "google-translate-api": "^2.3.0"
   },
