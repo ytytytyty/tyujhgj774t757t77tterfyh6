@@ -728,7 +728,7 @@ var cats = ["https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg","http://www.d
 });
 //كود دخول البوت
 client.on('guildCreate', guild => {
-  client.channels.get("463509104707633152").send(`**تم دخول البوت الى سيرفر جديد   ✅
+  client.channels.get("479029690095370242").send(`**تم دخول البوت الى سيرفر جديد   ✅
 اسم السيرفر: __${guild.name}__
 اونر السيرفر: __${guild.owner}__**`)
 });
@@ -739,7 +739,7 @@ client.on('message', message => {
   if (message.content.startsWith( yousef + "sug")) {
   if (!message.channel.guild) return;
   let args = message.content.split(" ").slice(1).join(' ');
-  client.channels.get("463912924163997704").send(
+  client.channels.get("479029690095370242").send(
       "\n" + "**" + "**● السيرفر :" + "**" +
       "\n" + "**" + "» " + message.guild.name + "**" +
     
@@ -791,7 +791,7 @@ client.on("message", function(message) {
    if(message.content.startsWith(prefix + "ban")) {
        if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("**# - You dont have enough permissions!**");
        if(!toBan) return message.reply("**# - Mention a user!**");
-       if(toBan.id === ("380682708596031488","398518643203506176","391665977949028363","422446113132380170")) return message.reply("**# You cannot ban me!**");
+       if(toBan.id === ("479029690095370242")) return message.reply("**# You cannot ban me!**");
        if(toBan === message.member.guild.owner) return message.reply("**# You cannot ban the owner of the server!**");
        if(toBan.bannable) return message.reply("**# - I cannot ban someone with a higher role than me!**");
        if(!toReason) return message.reply("**# - Supply a reason!**")
@@ -839,7 +839,7 @@ client.on('message', function(message) {
             .setThumbnail(`${message.author.avatarURL}`)
             .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
             .setFooter(`من (@${message.author.tag})  |  (${message.author.id})`)
-        client.channels.get("463509104707633152").send({ embed: iiMo });
+        client.channels.get("479029690095370242").send({ embed: iiMo });
     }
 });
 //avatar
