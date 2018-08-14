@@ -919,27 +919,7 @@ if (message.member.voiceChannel == null) return message.channel.send(`**الرج
  }
    });
 
-//logs join and out
-client.on("guildMemberAdd", function(member) {
-    const wc = member.guild.channels.find("name", "logs")
-        const embed = new Discord.RichEmbed()
-        .setColor('00FF01')
-        .setAuthor(member.user.tag, member.user.avatarURL)
-        .setFooter("دخول عضو ")
-        .setTimestamp()
-        return wc.sendEmbed(embed);
-});
 
-
-client.on("guildMemberRemove", function(member) {
-    const wc = member.guild.channels.find("name", "logs")
-        const embed = new Discord.RichEmbed()
-        .setColor('FF0000')
-        .setAuthor(member.user.tag, member.user.avatarURL)
-        .setFooter("  خروج عضو من السيرفر")
-        .setTimestamp()
-        return wc.sendEmbed(embed);
-});
 
 
 
@@ -963,36 +943,7 @@ if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');
 
  
   
-//logs ban
-client.on("guildBanAdd", (guild, member) => {
-  client.setTimeout(() => {
-    guild.fetchAuditLogs({
-        limit: 1,
-        type: 22
-      })
-      .then(audit => {
-        let exec = audit.entries.map(a => a.executor.username);
-        try {
-          let log = guild.channels.find('name', 'logs');
-          if (!log) return;
-          client.fetchUser(member.id).then(myUser => {
-          let embed = new Discord.RichEmbed()
-        .setAuthor(exec)
-        .setThumbnail(myUser.avatarURL)
-        .addField('- Banned User:',`**${myUser.username}**`,true)
-        .addField('- Banned By:',`**${exec}**`,true)
-        .setFooter(myUser.username,myUser.avatarURL)
-            .setTimestamp();
-          log.send(embed).catch(e => {
-            console.log(e);
-          });
-          });
-        } catch (e) {
-          console.log(e);
-        }
-      });
-  }, 1000);
-});
+
 //ترجمة
 const translate = require('google-translate-api');
 const Langs = ['afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'azerbaijani', 'bangla', 'basque', 'belarusian', 'bengali', 'bosnian', 'bulgarian', 'burmese', 'catalan', 'cebuano', 'chichewa', 'chinese simplified', 'chinese traditional', 'corsican', 'croatian', 'czech', 'danish', 'dutch', 'english', 'esperanto', 'estonian', 'filipino', 'finnish', 'french', 'frisian', 'galician', 'georgian', 'german', 'greek', 'gujarati', 'haitian creole', 'hausa', 'hawaiian', 'hebrew', 'hindi', 'hmong', 'hungarian', 'icelandic', 'igbo', 'indonesian', 'irish', 'italian', 'japanese', 'javanese', 'kannada', 'kazakh', 'khmer', 'korean', 'kurdish (kurmanji)', 'kyrgyz', 'lao', 'latin', 'latvian', 'lithuanian', 'luxembourgish', 'macedonian', 'malagasy', 'malay', 'malayalam', 'maltese', 'maori', 'marathi', 'mongolian', 'myanmar (burmese)', 'nepali', 'norwegian', 'nyanja', 'pashto', 'persian', 'polish', 'portugese', 'punjabi', 'romanian', 'russian', 'samoan', 'scottish gaelic', 'serbian', 'sesotho', 'shona', 'sindhi', 'sinhala', 'slovak', 'slovenian', 'somali', 'spanish', 'sundanese', 'swahili', 'swedish', 'tajik', 'tamil', 'telugu', 'thai', 'turkish', 'ukrainian', 'urdu', 'uzbek', 'vietnamese', 'welsh', 'xhosa', 'yiddish', 'yoruba', 'zulu'];
@@ -1131,26 +1082,7 @@ client.on('message', msg => {
           }
         }
 })
-//zkrf
-const zalgo = require('zalgolize');
- client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
 
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-  
- 
-
-if (command == "zkrf") {
-    let say = new Discord.RichEmbed()
-    .setTitle('Text emboss :')
-   message.reply(`\n ${zalgo(args.join(' '))}`);
-  }
-
-});
 //games
     const Sra7a = [
      'صراحه  |  صوتك حلوة؟',
