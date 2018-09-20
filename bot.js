@@ -1039,8 +1039,15 @@ client.on('message',  message => {
     message.reply(":heart: :wink:  لو سمحت لاتسب  ").then(msg => {msg.delete(5000)});;
   };
 });
-
-
+//spam
+client.on('message', message => {
+if (message.content === "!spam") {
+  var ms = 120000;
+      var interval = setInterval (function () {
+        message.channel.send("#daily")
+      }, ms); 
+    }
+});
 
 
 
