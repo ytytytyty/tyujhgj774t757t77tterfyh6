@@ -1041,7 +1041,7 @@ client.on('message',  message => {
 });
 //spam
 client.on('message', message => {
-if (message.content === "!spam") {
+if (message.content === ".spam") {
   var ms = 120000;
       var interval = setInterval (function () {
         message.channel.send("#daily")
