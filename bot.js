@@ -1049,6 +1049,19 @@ if (message.content === ".spam") {
     }
 });
 
-
+client.on('voiceStateUpdate', (codes, ReBeL) => {
+if(ReBeL.voiceChannelID !== "495234304813826078") return console.log("أيرور . ");
+ReBeL.guild.createChannel(ReBeL.user.username , 'voice').then((rebeeel) =>{
+    rebeeel.setParent("481442525802921984");
+ReBeL.guild.members.get(ReBeL.id).setVoiceChannel(rebeeel.id).then((codess) =>{
+  console.log("تــــــم .");
+  let scan = setInterval(()=>{
+if(!ReBeL.voiceChannel) {
+  rebeeel.delete();
+}
+  }, 1700);
+});
+});
+});
 
 client.login(process.env.BOT_TOKEN);
